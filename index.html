@@ -30,7 +30,7 @@
 </head>
 <body>
 
-  <div class="center">
+  <div id="center" class="center">
 
     <img src="logo.jpg" alt="Hof Interiors Logo" />
     <p>Bespoke Design and Manufacturer.</p>
@@ -55,7 +55,13 @@
     }
 
     .center {
+      opacity: 0;
       text-align: center;
+      transition: .5s ease-in-out;
+    }
+
+    .center.visible {
+      opacity: 1;
     }
 
     .center h1 {
@@ -118,6 +124,15 @@
       }
     }
   </style>
+
+  <script>
+    (function() {
+      var center = document.getElementById('center');
+      setTimeout(() => {
+        center.classList.add('visible');
+      }, 500);
+    })();
+  </script>
 
 </body>
 </html>
